@@ -43,8 +43,19 @@ function TodoList() {
         }
 
         return (
-            <div className='todo-list'>
-                {tasks.map(task => (
+            <div>
+            <div className='todo-form'>
+               
+                 <input 
+                    value = {text}
+                    onChange = {(e) => setText(e.target.value)} 
+                    />
+               
+            <button onClick={() => addTask(text)} className='add-todo'> Add </button>
+            </div>
+            
+            
+                { tasks.map(task => (
                    <TodoItem 
                    key = {task.id}
                    task = {task}
@@ -52,14 +63,11 @@ function TodoList() {
                    toggleCompleted={toggleCompleted}
                    />
 
-
                 ))}
-                <input 
-                    value = {text}
-                    onChange = {(e) => setText(e.target.value)} 
-                    />
-                <button onClick={() => addTask(text)}> Add </button>
+               
             </div>
+            
+        
         )
 }
 

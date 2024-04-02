@@ -5,9 +5,12 @@ function TodoItem( {task, deleteTask, toggleCompleted}) {
     }
 
     return (
-        <div className='todo-item'>
+        <div className='todo-list'>
+            
+           
             <input type="checkbox" checked={task.completed} onChange = {handlechange} />
-            <p> {task.text} </p>
+            {task.text}
+        
             <button onClick = {() => deleteTask(task.id)}>
                 X
             </button>
