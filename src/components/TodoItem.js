@@ -1,5 +1,5 @@
 import React from 'react';
-function TodoItem( {task, deleteTask, toggleCompleted}) {
+function TodoItem( {task, deleteTask, toggleCompleted} ) {
     function handlechange() {
         toggleCompleted(task.id);
     }
@@ -7,10 +7,9 @@ function TodoItem( {task, deleteTask, toggleCompleted}) {
     return (
         <div className='todo-list'>
             
-           
-            <input type="checkbox" checked={task.completed} onChange = {handlechange} />
-            {task.text}
-        
+            <input id={task.id} type="checkbox" checked={task.completed} onChange = {handlechange} />
+            {task.title} 
+            
             <button onClick = {() => deleteTask(task.id)}>
                 X
             </button>
@@ -19,3 +18,4 @@ function TodoItem( {task, deleteTask, toggleCompleted}) {
 }
 
 export default TodoItem;
+
