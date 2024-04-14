@@ -54,10 +54,12 @@ function TodoList() {
         }
 
         function toggleCompleted(id) {
-            console.log("task completed "+id);
+            console.log("task completed "+url+id);
             fetch(url+id, {
                 method: 'PATCH',
-                headers
+                headers: {
+                    'Content-Type': 'application/json'
+                },
             })
             .then(response => { 
                 if (response.ok) {
