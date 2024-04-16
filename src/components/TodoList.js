@@ -83,7 +83,7 @@ function TodoList() {
             <div>
             <div className='todo-form'>
                
-                 <input 
+                 <input
                     value = {title}
                     onChange = {(e) => setTitle(e.target.value)} 
                     />
@@ -95,6 +95,7 @@ function TodoList() {
                 { tasks.map(task => 
                     (
                         <TodoItem 
+                        key = {task.id}
                         task = {task}
                         deleteTask = {deleteTask}
                         toggleCompleted={toggleCompleted}

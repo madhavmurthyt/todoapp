@@ -7,7 +7,7 @@ function TodoItem( {task, deleteTask, toggleCompleted} ) {
     return (
         <div className='todo-list'>
             
-            <input id={task.id} type="checkbox" checked={task.completed} onChange = {handlechange} />
+            <input key={task.id} type="checkbox" checked={task.completed} onChange = {handlechange} />
             {task.title} 
             
             <button onClick = {() => deleteTask(task.id)}>
